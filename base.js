@@ -1,22 +1,22 @@
 class Base {
   constructor() {
-    this.base = [];
+    this.base = {};
   }
 
-  setBase(arr) {
-    this.base = arr;
+  setBase(obj) {
+    this.base = obj;
   }
 
   clearBase() {
-    this.base = [];
+    this.base = {};
   }
 
   getBase() {
     return this.base;
   }
 
-  add(element) {
-    this.base.push(element);
+  add(newElement) {
+    this.base[Object.keys(this.base).length + 1] = newElement;
   }
 
 }

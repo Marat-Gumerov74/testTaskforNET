@@ -36,26 +36,29 @@ class ui {
   }
 
   sortByDate(str = 'up') {
-    let base = this.base.getBase();
-    
-      const len = base.length;
-      let gap = Math.floor(len / 2);
+    let objCopy = Object.assign({}, this.base.getBase());
+    let collection = Object.entries(objCopy);
+    const len = collection.length;
+    console.log(collection);
+
+    let gap = Math.floor(len / 2);
       while (gap >= 1){
         for (let j = gap; j < len; j++) {
-          const current = base[j].getData();
-          console.log(`current: ${current}`);
-          let k = j;
-          while(k > 0 && base [j - gap].getData > current) {
-            base[k][date] = base[k - gap][date];
-            k -= gap;
-          }
-          base[k][date] = current;
-        }
+          const currentData = collection[j][1].getData();
+          const currentPurchase = collection[j][1];
+          console.log(`currentData: ${currentData}`);
+          console.log('currentPurchase: ', currentPurchase);
+           let k = j;
+          
+          // while (k > 0 && objCopy[k - gap].getData() > currentData) {
+          //   objCopy[k] = objCopy[k - gap];
+          //   k -= gap;
+          // }
+          // objCopy[k] = currentPurchase;
+         }
         gap = Math.floor(gap / 2);
-      }
-      
-      console.log(base);
-      
+     }
+                    // console.log(objCopy);
         // const ShellSort = arr => {
         //   const l = arr.length;
         //   let gap = Math.floor(l / 2);
@@ -73,7 +76,7 @@ class ui {
         //   }
         //   return arr;
         // };
-  }
+    }
 
 }
 
