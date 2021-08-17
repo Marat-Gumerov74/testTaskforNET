@@ -12,6 +12,10 @@ class Product {
     return this.price;
   }
 
+  getName() {
+    return this.name;
+  }
+
   test() {
     console.log('work');
   }

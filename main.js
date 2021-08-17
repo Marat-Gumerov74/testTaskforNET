@@ -1,5 +1,4 @@
-
-const UI = require("./ui");
+const UI = require("./modules/ui");
 
 const ui = new UI();
 ui.addPurchase(1, 1, {'discountPersent': 1});
@@ -13,5 +12,10 @@ ui.addPurchase(16, 1, {'discountWithBonus': 10});
 ui.addPurchase(20, 1, {'discountPersent': 6});
 ui.addPurchase(17, 2, {'discountWithBonus': 8});
 
-ui.sortByDate()
-
+ui.sortByDate();
+ui.displayAll();
+console.log(ui.isSalesOfDate(10));
+ui.displayDiscountBy("");
+ui.displayDiscountBy("discountPersent")
+ui.displayDiscountBy("discountShipping")
+ui.displayDiscountBy("discountWithBonus")

@@ -16,6 +16,7 @@ class Base {
   }
 
   add(newElement) {
+    (Object.keys(this.base).length == 0) ? this.base[Object.keys(this.base).length] = newElement:
     this.base[Object.keys(this.base).length + 1] = newElement;
   }
 
